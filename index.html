@@ -40,8 +40,86 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="assets/css/academicons.css"/>
     <style>
+        :root {
+            --academic-ink: #1d2a35;
+            --academic-blue: #1e4d6b;
+            --academic-blue-soft: #eaf1f5;
+            --academic-rule: #d7e0e6;
+            --academic-surface: #f8fafb;
+        }
+
         html { scroll-behavior: smooth; }
         [id] { scroll-margin-top: 4.5rem; }
+
+        body {
+            color: var(--academic-ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        }
+
+        .page__content {
+            max-width: 56rem;
+        }
+
+        .page__content > h1 {
+            margin: 2.35rem 0 1rem;
+            padding-bottom: 0.45rem;
+            color: var(--academic-ink);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.55rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            border-bottom: 1px solid var(--academic-rule);
+        }
+
+        .page__content > p {
+            max-width: 54rem;
+            line-height: 1.78;
+        }
+
+        .research-focus {
+            margin: 1.5rem 0 2.35rem;
+            padding: 1.25rem 1.35rem 1.3rem;
+            background: var(--academic-surface);
+            border: 1px solid var(--academic-rule);
+            border-left: 4px solid var(--academic-blue);
+        }
+
+        .research-focus__title {
+            margin: 0 0 0.85rem;
+            color: var(--academic-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .research-focus__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .research-focus__tags li {
+            margin: 0;
+            padding: 0.35rem 0.6rem;
+            color: var(--academic-blue);
+            background: #fff;
+            border: 1px solid #b9cad5;
+            border-radius: 2px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        @media (max-width: 37.5em) {
+            .page__content > h1 { font-size: 1.4rem; }
+            .research-focus { padding: 1rem; }
+            .research-focus__tags { gap: 0.45rem; }
+        }
     </style>
 
     <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } });
@@ -78,8 +156,6 @@
                             href="#about-me">Homepage</a></li>
 
                     <li class="masthead__menu-item"><a href="#-about-me">About Me</a></li>
-
-                    <li class="masthead__menu-item"><a href="#-research-interests">Research Interests</a></li>
                     
                     <li class="masthead__menu-item"><a href="#-educations">Education</a></li>
 
@@ -172,17 +248,17 @@
                 <p><span class="anchor" id="about-me"></span></p>
 
                 <h1 id="-about-me">About Me</h1>
-                <ul>
-                    <li>Hi, my name is Ruilin Yao (姚瑞霖). I am a PhD student at Wuhan University of Technology and a joint PhD student at the Institute of Automation, Chinese Academy of Sciences (CASIA). I study how vision-language models perceive, ground, reason about, and act in complex visual environments. My current work focuses on multimodal reasoning and evaluation, visual and GUI grounding, referring expression comprehension, and uncertainty-aware active visual search. I also work on core visual perception problems, including object detection, segmentation, and remote sensing and hyperspectral image understanding.
-                    </li>
-                </ul>
+                <p>Hi, my name is Ruilin Yao (姚瑞霖). I am a PhD student at Wuhan University of Technology and a joint PhD student at the Institute of Automation, Chinese Academy of Sciences (CASIA). My research lies at the intersection of visual perception and multimodal learning, with a particular focus on visual grounding and its extension to GUI grounding. Within vision-language models, I investigate multimodal reasoning and language-guided perception, alongside core visual perception problems in object detection and segmentation. I am especially interested in equipping GUI agents with reliable long-horizon interaction capabilities and advancing general-purpose visual agentic reasoning, enabling agents to robustly perceive, ground, reason, and act in complex visual and human–computer interaction environments.</p>
 
-                <h1 id="-research-interests">Research Interests</h1>
-                <ul>
-                    <li><strong>Vision-language models:</strong> multimodal reasoning, evaluation, and agents.</li>
-                    <li><strong>Grounding and interaction:</strong> visual grounding, GUI grounding, referring expression comprehension, and uncertainty-aware visual search.</li>
-                    <li><strong>Visual perception:</strong> object detection, segmentation, remote sensing, and hyperspectral image understanding.</li>
-                </ul>
+                <section class="research-focus" aria-labelledby="research-focus-title">
+                    <h2 class="research-focus__title" id="research-focus-title">Research Keywords</h2>
+                    <ul class="research-focus__tags">
+                        <li>Visual Perception</li>
+                        <li>Visual Agentic Reasoning</li>
+                        <li>Multimodal Reasoning and Long-Horizon GUI Agents</li>
+                    </ul>
+                </section>
+
                 <h1 id="-educations">Educations</h1>
                 <ul>
                     <li>
@@ -215,22 +291,22 @@
                 <h1 id="-publications">Selected Publications</h1>
                 <ul>
                     <li>
-                        <strong>Background Blurring Matters: Improving Visual Grounding by Merging Text-Irrelevant Tokens</strong><br>
+                        <strong>Background Blurring Matters: Improving Visual Grounding by Merging Text-Irrelevant Tokens</strong> <a href="https://github.com/Mr-Bigworth/ToB" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Mr-Bigworth/ToB</a><br>
                         <strong>Ruilin Yao</strong>, Shengwu Xiong, Shanshan Yang, Tianyu Zou, Shili Xiong, and Yi Rong.<br>
                         <strong>ECCV 2026</strong>, First Author
                     </li>
                     <li>
-                        <strong>AutoFocus: Uncertainty-Aware Active Visual Search for GUI Grounding</strong><br>
+                        <strong>AutoFocus: Uncertainty-Aware Active Visual Search for GUI Grounding</strong> <a href="https://github.com/Mr-Bigworth/AutoFocus" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Mr-Bigworth/AutoFocus</a><br>
                         <strong>Ruilin Yao</strong> et al.<br>
                         <strong>arXiv:2605.02630</strong>, 2026, First Author
                     </li>
                     <li>
-                        <strong>Lens: Multi-level evaluation of multimodal reasoning with large language models</strong><br>
+                        <strong>Lens: Multi-level evaluation of multimodal reasoning with large language models</strong> <a href="https://github.com/Lens4MLLMs/LENS" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Lens4MLLMs/LENS</a><br>
                         <strong>Ruilin Yao</strong>, Bo Zhang, Jirui Huang, Xinwei Long, Yifang Zhang, Tianyu Zou, Yufei Wu, Shichao Su, Yifan Xu, Wenxi Zeng, Zhaoyu Yang, Guoyou Li, Shilan Zhang, Zichan Li, Yaxiong Chen, Shengwu Xiong, Peng Xu, Jiajun Zhang, Bowen Zhou, David Clifton, Luc Van Gool.<br>
                         <strong>ICLR 2026</strong>, First Author
                     </li>
                     <li>
-                        <strong>Balancing conservatism and aggressiveness: Prototype-affinity hybrid network for few-shot segmentation</strong><br>
+                        <strong>Balancing conservatism and aggressiveness: Prototype-affinity hybrid network for few-shot segmentation</strong> <a href="https://github.com/tianyu-zou/PAHNet" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> tianyu-zou/PAHNet</a><br>
                         Tianyu Zou, Shengwu Xiong, <strong>Ruilin Yao</strong>, and Yi Rong.<br>
                         <strong>ICCV 2025</strong>, Third Author
                     </li>
@@ -245,12 +321,12 @@
                         <strong>ACM MM 2025</strong> (Oral), First Author
                     </li>
                     <li>
-                        <strong>Visual grounding with multi-modal conditional adaptation</strong><br>
+                        <strong>Visual grounding with multi-modal conditional adaptation</strong> <a href="https://github.com/Mr-Bigworth/MMCA" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Mr-Bigworth/MMCA</a><br>
                         <strong>Ruilin Yao</strong>, Shengwu Xiong, Yichen Zhao, and Yi Rong.<br>
                         <strong>ACM MM 2024</strong> (Oral), First Author
                     </li>
                     <li>
-                        <strong>CTOD: Cross-attentive task-alignment for one-stage object detection</strong><br>
+                        <strong>CTOD: Cross-attentive task-alignment for one-stage object detection</strong> <a href="https://github.com/Mr-Bigworth/CTOD" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Mr-Bigworth/CTOD</a><br>
                         <strong>Ruilin Yao</strong>, Yi Rong, Qiangqiang Huang, and Shengwu Xiong.<br>
                         <strong>IEEE TCSVT 2024</strong>, First Author
                     </li>
@@ -259,17 +335,13 @@
                 <h1 id="-projects-and-services">Projects & Service</h1>
                 <ul>
                     <li>
-                        <strong>Research Intern, Ant Group (inclusionAI)</strong><br>
+                        <strong>Research Intern, Ant Group (inclusionAI)</strong> <a href="https://github.com/inclusionAI/UI-Venus?tab=readme-ov-file" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> UI-Venus</a><br>
                         Mar. 2026 – Present<br>
-                        Enhancing GUI Agent and Grounding with Trajectory Synthesis via MLLMs, UI-Venus Team.
+                        Enhancing GUI agents and grounding through trajectory synthesis with MLLMs in the UI-Venus Team; responsible for mid-training and post-training for grounding tasks, and for developing CAPTCHA-handling capabilities for GUI agents.
                     </li>
                     <li>
-                        <strong>General visual-dialog dataset and evaluation system</strong><br>
-                        Collaborated with Tsinghua University and CASIA, responsible for dataset collection, annotation, and construction.
-                    </li>
-                    <li>
-                        <strong>Multimodal perception & reasoning evaluation</strong><br>
-                        Evaluated open/closed-source models on perception (detection, OCR, etc.) and reasoning tasks; wrote and submitted the ICLR paper as first author (accepted).
+                        <strong>General Visual-Dialog Dataset and Multimodal Perception &amp; Reasoning Evaluation</strong><br>
+                        Collaborated with Tsinghua University and CASIA on dataset collection, annotation, and construction; evaluated open- and closed-source models on perception (e.g., detection and OCR) and reasoning tasks, leading to an ICLR 2026 first-author paper.
                     </li>
                     <li>
                         <strong>ICCV MARS2 Workshop organization</strong><br>
