@@ -95,6 +95,8 @@ h1:before, .anchor:before { display: none; }
 .honors-list li:before { content: ""; position: absolute; left: 0.2rem; top: 1.3rem; width: 6px; height: 6px; background: #a88c80; border-radius: 50%; }
 .service-list li { margin: 0; padding: 1rem 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); overflow-wrap: anywhere; }
 .service-list strong { color: var(--ink); }
+.organization-credit { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.85rem; margin: 0.3rem 0 0.7rem; color: var(--blue); font-size: 0.8rem; }
+.organization-credit .organization-logo { display: block; flex: 0 0 auto; width: 112px; height: 35px; margin: 0; object-fit: contain; }
 
 @media (max-width: 1000px) {
     #main { grid-template-columns: 230px minmax(0, 1fr); gap: 2rem; padding: 0 1.5rem; }
